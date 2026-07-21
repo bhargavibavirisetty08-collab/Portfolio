@@ -1,136 +1,156 @@
-document.getElementById("registrationForm").addEventListener("submit", function(event){
+// Contact Form Validation
 
-    event.preventDefault();
+const form = document.getElementById("contactForm");
 
-    // Clear all previous errors
-    document.getElementById("nameError").innerHTML = "";
-    document.getElementById("rollError").innerHTML = "";
-    document.getElementById("emailError").innerHTML = "";
-    document.getElementById("mobileError").innerHTML = "";
-    document.getElementById("passwordError").innerHTML = "";
-    document.getElementById("confirmPasswordError").innerHTML = "";
-    document.getElementById("genderError").innerHTML = "";
-    document.getElementById("departmentError").innerHTML = "";
-    document.getElementById("dobError").innerHTML = "";
-    document.getElementById("successMessage").innerHTML = "";
+form.addEventListener("submit", function (e) {
 
-    let valid = true;
+    e.preventDefault();
 
-    // Get values
-    let name = document.getElementById("name").value.trim();
-    let roll = document.getElementById("roll").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let mobile = document.getElementById("mobile").value.trim();
-    let password = document.getElementById("password").value;
-    let confirmPassword = document.getElementById("confirmPassword").value;
-    let department = document.getElementById("department").value;
-    let dob = document.getElementById("dob").value;
+    // Input Fields
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
 
-    let gender = document.querySelector('input[name="gender"]:checked');
+    // Error Fields
+    const nameError = document.getElementById("nameError");
+    const emailError = document.getElementById("emailError");
+    const subjectError = document.getElementById("subjectError");
+    const messageError = document.getElementById("messageError");
 
-    // Full Name
-    if(name === ""){
-        document.getElementById("nameError").innerHTML =
-        "Full Name is required.";
-        valid = false;
+    // Clear Previous Errors
+    nameError.innerHTML = "";
+    emailError.innerHTML = "";
+    subjectError.innerHTML = "";
+    messageError.innerHTML = "";
+
+    let isValid = true;
+
+    // ---------- Name Validation ----------
+    if (name === "") {
+        nameError.innerHTML = "❌ Name cannot be empty";
+        isValid = false;
     }
 
-    // Roll Number
-    let rollPattern = /^[A-Za-z0-9]+$/;
+    // ---------- Email Validation ----------
+    const emailPattern =
+        /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
-    if(roll === ""){
-        document.getElementById("rollError").innerHTML =
-        "Roll Number is required.";
-        valid = false;
+    if (email === "") {
+        emailError.innerHTML = "❌ Email cannot be empty";
+        isValid = false;
     }
-    else if(!rollPattern.test(roll)){
-        document.getElementById("rollError").innerHTML =
-        "Only letters and numbers are allowed.";
-        valid = false;
-    }
-
-    // Email
-    let emailPattern =
-    /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-
-    if(email === ""){
-        document.getElementById("emailError").innerHTML =
-        "Email is required.";
-        valid = false;
-    }
-    else if(!emailPattern.test(email)){
-        document.getElementById("emailError").innerHTML =
-        "Enter a valid email address.";
-        valid = false;
+    else if (!emailPattern.test(email)) {
+        emailError.innerHTML = "❌ Enter a valid email address";
+        isValid = false;
     }
 
-    // Mobile Number
-    let mobilePattern = /^[0-9]{10}$/;
-
-    if(mobile === ""){
-        document.getElementById("mobileError").innerHTML =
-        "Mobile Number is required.";
-        valid = false;
+    // ---------- Subject Validation ----------
+    if (subject === "") {
+        subjectError.innerHTML = "❌ Subject cannot be empty";
+        isValid = false;
     }
-    else if(!mobilePattern.test(mobile)){
-        document.getElementById("mobileError").innerHTML =
-        "Mobile Number must contain exactly 10 digits.";
-        valid = false;
+    else if (subject.length < 5) {
+        subjectError.innerHTML =
+            "❌ Subject must contain at least 5 characters";
+        isValid = false;
     }
 
-    // Password
-    if(password === ""){
-        document.getElementById("passwordError").innerHTML =
-        "Password is required.";
-        valid = false;
+    // ---------- Message Validation ----------
+    if (message === "") {
+        messageError.innerHTML = "❌ Message cannot be empty";
+        isValid = false;
     }
-    else if(password.length < 8){
-        document.getElementById("passwordError").innerHTML =
-        "Password must be at least 8 characters.";
-        valid = false;
-    }
-
-    // Confirm Password
-    if(confirmPassword === ""){
-        document.getElementById("confirmPasswordError").innerHTML =
-        "Confirm your password.";
-        valid = false;
-    }
-    else if(password !== confirmPassword){
-        document.getElementById("confirmPasswordError").innerHTML =
-        "Passwords do not match.";
-        valid = false;
+    else if (message.length < 20) {
+        messageError.innerHTML =
+            "❌ Message must contain at least 20 characters";
+        isValid = false;
     }
 
-    // Gender
-    if(gender == null){
-        document.getElementById("genderError").innerHTML =
-        "Please select your gender.";
-        valid = false;
-    }
+    // ---------- Success ----------
+    if (isValid) {
 
-    // Department
-    if(department === ""){
-        document.getElementById("departmentError").innerHTML =
-        "Please select a department.";
-        valid = false;
-    }
+        alert("✅ Message Sent Successfully!");
 
-    // Date of Birth
-    if(dob === ""){
-        document.getElementById("dobError").innerHTML =
-        "Please select your Date of Birth.";
-        valid = false;
-    }
-
-    // Success Message
-    if(valid){
-
-        document.getElementById("successMessage").innerHTML =
-        "🎉 Registration Successful!";
-
-        document.getElementById("registrationForm").reset();
+        form.reset();
 
     }
+
+});
+
+
+// Smooth Active Navbar Highlight
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.clientHeight;
+
+        if (pageYOffset >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+
+    });
+
+});
+
+
+// Navbar Background on Scroll
+
+window.addEventListener("scroll", () => {
+
+    const navbar = document.querySelector(".navbar");
+
+    if (window.scrollY > 50) {
+
+        navbar.style.background = "rgba(0,0,0,0.85)";
+
+    }
+    else {
+
+        navbar.style.background = "rgba(0,0,0,0.35)";
+
+    }
+
+});
+
+
+// Fade-in Animation for Sections
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+});
+
+document.querySelectorAll("section").forEach((sec) => {
+
+    sec.classList.add("hidden");
+    observer.observe(sec);
 
 });

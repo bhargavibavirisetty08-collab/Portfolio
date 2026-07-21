@@ -1,302 +1,500 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Student Registration Form</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<title>Bhargavi | Portfolio</title>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<div class="container py-5">
+<!-- Navbar -->
 
-    <div class="row justify-content-center">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
 
-        <div class="col-lg-7 col-md-9">
+<div class="container">
 
-            <div class="card shadow-lg border-0 rounded-4">
+<a class="navbar-brand fw-bold" href="#">
+Portfolio
+</a>
 
-                <div class="card-body p-5">
+<button class="navbar-toggler"
+data-bs-toggle="collapse"
+data-bs-target="#menu">
 
-                    <h2 class="text-center text-primary fw-bold">
-                        Student Registration Form
-                    </h2>
+<span class="navbar-toggler-icon"></span>
 
-                    <p class="text-center text-muted mb-4">
-                        Please fill in the details below
-                    </p>
+</button>
 
-                    <form id="registrationForm">
+<div class="collapse navbar-collapse" id="menu">
 
-                        <!-- Full Name -->
+<ul class="navbar-nav ms-auto">
 
-                        <div class="mb-3">
+<li class="nav-item">
+<a class="nav-link" href="#home">Home</a>
+</li>
 
-                            <label class="form-label fw-semibold">
-                                <i class="fa-solid fa-user text-primary"></i>
-                                Full Name
-                            </label>
+<li class="nav-item">
+<a class="nav-link" href="#about">About</a>
+</li>
 
-                            <input
-                            type="text"
-                            id="name"
-                            class="form-control"
-                            placeholder="Enter your full name">
+<li class="nav-item">
+<a class="nav-link" href="#skills">Skills</a>
+</li>
 
-                            <small id="nameError" class="text-danger"></small>
+<li class="nav-item">
+<a class="nav-link" href="#education">Education</a>
+</li>
 
-                        </div>
+<li class="nav-item">
+<a class="nav-link" href="#projects">Projects</a>
+</li>
 
-                        <!-- Roll Number -->
+<li class="nav-item">
+<a class="nav-link" href="#contact">Contact</a>
+</li>
 
-                        <div class="mb-3">
+</ul>
 
-                            <label class="form-label fw-semibold">
-                                <i class="fa-solid fa-id-card text-primary"></i>
-                                Roll Number
-                            </label>
+</div>
 
-                            <input
-                            type="text"
-                            id="roll"
-                            class="form-control"
-                            placeholder="Enter Roll Number">
+</div>
 
-                            <small id="rollError" class="text-danger"></small>
+</nav>
 
-                        </div>
+<!-- HOME -->
 
-                        <!-- Email -->
+<section id="home">
 
-                        <div class="mb-3">
+<div class="container">
 
-                            <label class="form-label fw-semibold">
-                                <i class="fa-solid fa-envelope text-primary"></i>
-                                Email ID
-                            </label>
+<div class="row align-items-center">
 
-                            <input
-                            type="email"
-                            id="email"
-                            class="form-control"
-                            placeholder="Enter Email">
+<div class="col-md-6">
 
-                            <small id="emailError" class="text-danger"></small>
+<h4>Hello, I'm</h4>
 
-                        </div>
+<h1 class="display-4 fw-bold">
+Bhargavi
+</h1>
 
-                        <!-- Mobile -->
+<h3 class="text-warning">
+ Java Backend  Developer
+</h3>
 
-                        <div class="mb-3">
+<p>
 
-                            <label class="form-label fw-semibold">
-                                <i class="fa-solid fa-phone text-primary"></i>
-                                Mobile Number
-                            </label>
+I am a Java Backend Developer and B.Tech Computer Science student passionate about building secure and scalable applications. I have experience in Core Java, Spring Boot, REST APIs, JDBC, Postgre SQL, and JWT Authentication. 
 
-                            <input
-                            type="text"
-                            id="mobile"
-                            class="form-control"
-                            placeholder="Enter Mobile Number">
+</p>
 
-                            <small id="mobileError" class="text-danger"></small>
 
-                        </div>
+<a href="#contact" class="btn btn-warning btn-lg">
+Hire Me
+</a>
 
-                        <!-- Password -->
+</div>
 
-                        <div class="mb-3">
+<div class="col-md-6 text-center">
 
-                            <label class="form-label fw-semibold">
-                                <i class="fa-solid fa-lock text-primary"></i>
-                                Password
-                            </label>
+<img src="pic.png"
+class="profile">
 
-                            <input
-                            type="password"
-                            id="password"
-                            class="form-control"
-                            placeholder="Enter Password">
+</div>
 
-                            <small id="passwordError" class="text-danger"></small>
+</div>
 
-                        </div>
+</div>
 
-                        <!-- Confirm Password -->
+</section>
 
-                        <div class="mb-3">
-
-                            <label class="form-label fw-semibold">
-                                <i class="fa-solid fa-key text-primary"></i>
-                                Confirm Password
-                            </label>
-
-                            <input
-                            type="password"
-                            id="confirmPassword"
-                            class="form-control"
-                            placeholder="Confirm Password">
-
-                            <small id="confirmPasswordError" class="text-danger"></small>
-
-                        </div>
-
-                        <!-- Gender -->
-
-                        <div class="mb-3">
-
-                            <label class="form-label fw-semibold">
-                                Gender
-                            </label>
-
-                            <div>
-
-                                <div class="form-check form-check-inline">
-
-                                    <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="gender"
-                                    value="Male">
-
-                                    <label class="form-check-label">
-                                        Male
-                                    </label>
-
-                                </div>
-
-                                <div class="form-check form-check-inline">
-
-                                    <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="gender"
-                                    value="Female">
-
-                                    <label class="form-check-label">
-                                        Female
-                                    </label>
-
-                                </div>
-
-                                <div class="form-check form-check-inline">
-
-                                    <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="gender"
-                                    value="Other">
-
-                                    <label class="form-check-label">
-                                        Other
-                                    </label>
-
-                                </div>
-
-                            </div>
-
-                            <small id="genderError" class="text-danger"></small>
-
-                        </div>
-
-                        <!-- Department -->
-
-                        <div class="mb-3">
-
-                            <label class="form-label fw-semibold">
-                                <i class="fa-solid fa-graduation-cap text-primary"></i>
-                                Department
-                            </label>
-
-                            <select
-                            id="department"
-                            class="form-select">
-
-                                <option value="">
-                                    Select Department
-                                </option>
-
-                                <option>CSE</option>
-                                <option>IT</option>
-                                <option>ECE</option>
-                                <option>EEE</option>
-                                <option>Mechanical</option>
-                                <option>Civil</option>
-
-                            </select>
-
-                            <small id="departmentError" class="text-danger"></small>
-
-                        </div>
-
-                        <!-- Date of Birth -->
-
-                        <div class="mb-3">
-
-                            <label class="form-label fw-semibold">
-                                <i class="fa-solid fa-calendar text-primary"></i>
-                                Date of Birth
-                            </label>
-
-                            <input
-                            type="date"
-                            id="dob"
-                            class="form-control">
-
-                            <small id="dobError" class="text-danger"></small>
-
-                        </div>
-
-                        <!-- Submit -->
-
-                        <div class="d-grid mt-4">
-
-                            <button
-                            type="submit"
-                            class="btn btn-primary btn-lg">
-
-                                Register
-
-                            </button>
-
-                        </div>
-
-                        <h5
-                        id="successMessage"
-                        class="text-center mt-4 text-success">
-                        </h5>
-
-                    </form>
-
-                </div>
-
-            </div>
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="container">
+
+        <h2 class="section-title">About Me</h2>
+
+        <div class="glass p-4">
+
+            <p>
+                I am a passionate <strong>Java Backend Developer</strong> and a
+                B.Tech Computer Science student with a strong interest in building
+                secure, scalable, and efficient web applications.
+            </p>
+
+            <p>
+                I have hands-on experience in <strong>Core Java, OOP, JDBC, SQL,
+                Spring Boot, REST APIs, JWT Authentication, and PostgreSQL</strong>.
+                I enjoy designing backend systems, developing APIs, managing
+                databases, and implementing secure authentication and authorization.
+            </p>
+
+            <p>
+                I believe in writing clean, maintainable code and continuously
+                improving my problem-solving skills through real-world projects and
+                Data Structures & Algorithms.
+            </p>
+
+            <p>
+                My goal is to become a skilled <strong>Full Stack Java Developer</strong>
+                by building scalable applications that provide reliable and secure
+                solutions for users.
+            </p>
 
         </div>
 
     </div>
 
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Skills
+
+</h2>
+
+<div class="row">
+
+<div class="col-md-6">
+
+<h6>HTML</h6>
+
+<div class="progress mb-4">
+
+<div class="progress-bar bg-warning"
+style="width:75%">
+75%
 </div>
 
-<!-- Bootstrap JS -->
+</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<h6>CSS</h6>
 
-<!-- JavaScript -->
+<div class="progress mb-4">
+
+<div class="progress-bar bg-info"
+style="width:70%">
+70%
+</div>
+
+</div>
+
+<h6>JavaScript</h6>
+
+<div class="progress mb-4">
+
+<div class="progress-bar bg-success"
+style="width:65%">
+65%
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-6">
+
+<h6>Java</h6>
+
+<div class="progress mb-4">
+
+<div class="progress-bar bg-danger"
+style="width:92%">
+92%
+</div>
+
+</div>
+
+<h6>Spring Boot</h6>
+
+<div class="progress mb-4">
+
+<div class="progress-bar bg-primary"
+style="width:80%">
+80%
+</div>
+
+</div>
+
+<h6>SQL</h6>
+
+<div class="progress">
+
+<div class="progress-bar bg-secondary"
+style="width:80%">
+80%
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+<div class="container">
+
+<h2 class="section-title">
+Education
+</h2>
+
+<div class="card p-4 glass">
+
+<h5>B.Tech</h5>
+
+<p>
+ANITS Engineering College
+</p>
+
+<p>
+Computer Science Engineering
+</p>
+
+<p>
+    YEAR : III Year
+</p>
+<p>
+     CGPA : 8.83/10
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- PROJECTS -->
+
+<!-- ================= PROJECT SECTION ================= -->
+
+<section class="projects" id="projects">
+
+    <h2>My Projects</h2>
+
+    <div class="project-container">
+
+
+        <!-- Project 1 -->
+        <div class="project-card">
+
+            <h3>E-Commerce Backend</h3>
+
+            <p>
+                Developed a secure e-commerce backend application with
+                user authentication, product management and order processing.
+                Implemented JWT based authentication and role-based access control.
+            </p>
+
+            <div class="project-tech">
+                <span>Java</span>
+                <span>Spring Boot</span>
+                <span>Spring Security</span>
+                <span>JWT</span>
+                <span>MySQL</span>
+            </div>
+
+            <div class="project-links">
+
+                <a href="https://github.com/bhargavibavirisetty08-collab/ECommerce-backend.git"
+                   target="_blank">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Project 2 -->
+        <div class="project-card">
+
+            <h3>Stock Trading System</h3>
+
+            <p>
+                Built a stock trading backend system that allows users to
+                buy and sell stocks. Implemented order management,
+                portfolio tracking and order matching using priority queues.
+            </p>
+
+            <div class="project-tech">
+                <span>Java</span>
+                <span>Spring Boot</span>
+                <span>Spring Security</span>
+                <span>JWT</span>
+                <span>PostgreSQL</span>
+                <span>JPA</span>
+            </div>
+
+            <div class="project-links">
+
+                <a href="https://github.com/bhargavibavirisetty08-collab/InternnProject" target="_blank">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+
+        <!-- Project 3 -->
+        <div class="project-card">
+
+            <h3>Library Management System</h3>
+
+            <p>
+                Created a Java based library management application to manage
+                books, users and borrowing operations with a simple user interface.
+            </p>
+
+            <div class="project-tech">
+                <span>Java</span>
+                <span>OOP</span>
+                <span>Swing</span>
+                <span>JDBC</span>
+                <span>MySQL</span>
+            </div>
+
+            <div class="project-links">
+
+                <a href="https://github.com/bhargavibavirisetty08-collab/DSA_and_Projects" target="_blank">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+
+   
+       
+
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Contact Me
+
+</h2>
+
+<form id="contactForm">
+
+<input
+type="text"
+id="name"
+class="form-control"
+placeholder="Name">
+
+<small id="nameError"></small>
+
+<br>
+
+<input
+type="email"
+id="email"
+class="form-control"
+placeholder="Email">
+
+<small id="emailError"></small>
+
+<br>
+
+<input
+type="text"
+id="subject"
+class="form-control"
+placeholder="Subject">
+
+<small id="subjectError"></small>
+
+<br>
+
+<textarea
+id="message"
+rows="5"
+class="form-control"
+placeholder="Message">
+
+</textarea>
+
+<small id="messageError"></small>
+
+<br>
+
+<button class="btn btn-warning w-100">
+
+Send Message
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+<h5>Connect with Me</h5>
+
+<a href="#"><i class="fab fa-facebook"></i></a>
+
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+<a href="#"><i class="fab fa-linkedin"></i></a>
+
+<a href="#"><i class="fab fa-github"></i></a>
+
+<p>
+© 2026 Bhargavi
+</p>
+
+</footer>
 
 <script src="script.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
